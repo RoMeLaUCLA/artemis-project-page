@@ -390,13 +390,23 @@
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-        <div id="results-carousel" class="carousel results-carousel">
+        <div id="image-carousel" class="carousel results-carousel image-carousel">
           <div class="item">
-            <img src="static/images/artemis_goal_pose.jpg" alt="ARTEMIS goal pose" loading="lazy"/>
+            <img src="static/images/robocup_standing.jpg" alt="ARTEMIS standing" loading="lazy"/>
           </div>
           <div class="item">
-            <img src="static/images/artemis3.jpg" alt="ARTEMIS goal pose" loading="lazy"/>
+            <img src="static/images/campus1.jpg" alt="ARTEMIS campus 1" loading="lazy"/>
           </div>
+          <div class="item">
+            <img src="static/images/campus2.jpg" alt="ARTEMIS campus 2" loading="lazy"/>
+          </div>
+          <div class="item">
+            <img src="static/images/campus3.jpg" alt="ARTEMIS campus 3" loading="lazy"/>
+          </div>
+          <div class="item">
+            <img src="static/images/campus4.jpg" alt="ARTEMIS campus 4" loading="lazy"/>
+          </div>
+          
           <div class="item">
             <img src="static/images/sw.png" alt="SW" loading="lazy"/>
           </div>
@@ -449,7 +459,8 @@
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">Behind the Scenes</h2>
-      <div id="results-carousel" class="carousel results-carousel">
+      <!-- mark this carousel as no-autoplay -->
+      <div id="video-carousel" class="carousel results-carousel video-carousel no-autoplay">
         <div class="item item-video1">
           <!-- TODO: Add poster image for better preview -->
           <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
@@ -478,6 +489,16 @@
           </video>
           <h2 class="subtitle has-text-centered">
             One Small Step for Artemis
+          </h2>
+        </div>
+        <div class="item item-video2">
+          <!-- TODO: Add poster image for better preview -->
+          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
+            <!-- Your video file here -->
+            <source src="static/videos/robocup22.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Getting there
           </h2>
         </div>
         <div class="item item-video2">

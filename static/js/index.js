@@ -120,23 +120,34 @@ function setupVideoCarouselAutoplay() {
 }
 
 $(document).ready(function() {
-    // Check for click events on the navbar burger icon
+    // options for carousels that SHOULD autoplay (images, etc.)
+    var autoplayOptions = {
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        loop: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+    };
 
-    var options = {
-		slidesToScroll: 1,
-		slidesToShow: 1,
-		loop: true,
-		infinite: true,
-		autoplay: true,
-		autoplaySpeed: 5000,
-    }
+    // options for carousels that should NOT autoplay (video carousel)
+    var noAutoplayOptions = {
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        loop: true,
+        infinite: true,
+        autoplay: false,   // <--- ensure no autoplay
+        autoplaySpeed: 5000,
+    };
 
-	// Initialize all div with carousel class
-    var carousels = bulmaCarousel.attach('.carousel', options);
-	
+    // Initialize all carousels EXCEPT those marked .no-autoplay
+    bulmaCarousel.attach('.carousel:not(.no-autoplay)', autoplayOptions);
+
+    // Initialize only the no-autoplay carousels with autoplay disabled
+    bulmaCarousel.attach('.carousel.no-autoplay', noAutoplayOptions);
+
     bulmaSlider.attach();
-    
-    // Setup video autoplay for carousel
-    setupVideoCarouselAutoplay();
 
-})
+    // Setup video autoplay/pause when in view (existing helper)
+    setupVideoCarouselAutoplay();
+});
